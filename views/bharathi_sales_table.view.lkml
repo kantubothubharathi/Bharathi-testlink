@@ -49,6 +49,7 @@ view: bharathi_sales_table {
   dimension: product_name {
     type: string
     sql: ${TABLE}.`Product Name` ;;
+    drill_fields: [order_date,product_id,profit]
   }
   dimension: profit {
     type: number
@@ -62,10 +63,12 @@ view: bharathi_sales_table {
   dimension: quantity {
     type: number
     sql: ${TABLE}.Quantity ;;
+    drill_fields: [sales, total_sales,category,profit]
   }
   dimension: region {
     type: string
     sql: ${TABLE}.Region ;;
+    drill_fields: [state, country, postal_code]
   }
   dimension: row_id {
     type: number
@@ -120,6 +123,7 @@ view: bharathi_sales_table {
   measure: total_sales {
     type: sum
     sql: ${sales} ;;
+    drill_fields: [order_id, product_id,count,profit]
   }
   measure: sales_per_customer {
     type: number
