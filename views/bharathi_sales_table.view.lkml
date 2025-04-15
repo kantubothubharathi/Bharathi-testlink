@@ -18,6 +18,10 @@ view: bharathi_sales_table {
     type: string
     sql: ${TABLE}.`Customer ID` ;;
   }
+  dimension: customer_id1 {
+    type: string
+    sql: ${TABLE}.`Customer ID` ;;
+  }
   dimension: customer_name {
     type: string
     sql: ${TABLE}.`Customer Name` ;;
